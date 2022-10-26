@@ -1,0 +1,39 @@
+//版本
+syntax = "proto3";
+//生成代码的命名空间
+option csharp_namespace = "TestGrpcNetClient";
+//包名
+package my_package;
+
+//定义服务
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc EmptyHello(EmptyHelloRequest) returns (Empty);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+
+message EmptyHelloRequest{
+	int32 id=3;
+	map<string, string> attributes = 2;
+	People people=1;
+}
+
+message People{
+	string name =1;
+	int32 age=2;
+}
+
+message Empty{
+
+}
