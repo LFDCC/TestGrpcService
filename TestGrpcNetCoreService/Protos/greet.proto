@@ -25,13 +25,6 @@ service Greeter {
 
   //双向流式处理方法
   rpc StreamingBothWays(stream ExampleRequest) returns (stream ExampleResponse);
-
-
-    //服务器流式处理方法-文件下载
-  rpc DwonloadFile(ExampleRequest) returns (stream ExampleResponse);
-
-	//客户端流式处理方法-文件上传
-  rpc UploadFile(stream ExampleRequest) returns (ExampleResponse);
 }
 
 // The request message containing the user's name.
